@@ -59,7 +59,7 @@ Para rodar este simulador em sua máquina local, siga os passos abaixo.
     ```
 Após executar o comando acima, a aplicação será aberta automaticamente no seu navegador.
 
-## ecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **Linguagem:** Python
 * **Interface Gráfica:** Streamlit
