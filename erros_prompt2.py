@@ -13,7 +13,7 @@ import decimal
 def normalizar_notacao_cientifica(numero): 
     if numero == 0: 
         return "0.0 x 10^0" 
-    str_cientifica = f"{numero:.10e}" # Começar a formatar como string, a notação científica 
+    str_cientifica = f"{numero:.10e}" # Começar a formatar como string, nnotação científica 
     str_mantissa, str_expoente = str_cientifica.split("e") # Separar o número digitado em dois, pela letra e
     exponente = int(str_expoente) # Pega a parte inteira do expoente, convertendo-a
     mantissa = decimal.Decimal(str_mantissa) # Converte a string mantissa para o decimal da notação 
@@ -81,7 +81,7 @@ def exibir_comparacao_trunc_arred(x, y, operacao, digitos):
         else: 
             raise ValueError("Operação inválida. Use +, -, *, ou /.") # Erro se operação dif
 
-        print(f"{COLOR_BLUE}\nValor Exato da Operação: {x} {operacao} {y} = {resultado_exato_base:.4f} ou {normalizar_notacao_cientifica(resultado_exato_base)}.{COLOR_RESET}") 
+        print(f"{COLOR_BLUE}\nValor Exato da Operação: {x} {operacao} {y} = {resultado_exato_base:.7f} ou {normalizar_notacao_cientifica(resultado_exato_base)}.{COLOR_RESET}") 
 
         # --- Resultados para Truncamento --- 
         print(f"{COLOR_YELLOW}\n--- Resultados para Truncamento ---{COLOR_RESET}") 
@@ -195,7 +195,7 @@ def exibir_resultados(x, y, operacao, digitos, metodo, resultado_exato):
    # Cálculo dos erros abs e relat chamando as funções, com 7 e 4 casas decimais de precisão
 
 # Função 8, esse é o exemplo I onde são solicitados ao usuário as entradas necessárias 
-# para que haja o uso da Função 7 (o comparativo entre truncado e arredondado). 
+# para que haja o uso da Função 6 (o comparativo entre truncado e arredondado). 
 def exemplo1_operacao_simples(): 
     print(f"{COLOR_GREEN}{COLOR_BOLD}\n--- Exemplo 1: Operação Simples ---{COLOR_RESET}") 
     print("Realiza uma operação entre dois números, mostrando resultados por truncamento e arredondamento.") 
@@ -209,7 +209,7 @@ def exemplo1_operacao_simples():
     # Chama a função com os dados inseridos
 
 # Função 9, exemplo II onde são solicitados ao usuário as entradas necessárias 
-# para que haja o uso da Função 6 (exibir resultados da "simulação"). 
+# para que haja o uso da Função 7 (exibir resultados da "simulação"). 
 def exemplo2_cancelamento_subtrativo(): 
     print(f"{COLOR_GREEN}{COLOR_BOLD}\n--- Exemplo 2: Propagação de Erro e Cancelamento Subtrativo ---{COLOR_RESET}") 
     print("Demonstra como a subtração de números muito próximos pode levar a uma perda de dígitos significativos.") 
